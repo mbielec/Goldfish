@@ -1,0 +1,30 @@
+{
+  "name": "goldfish",
+  "version": "1.0.0",
+  "description": "A productivity app for Western University students.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "bcrypt": "*",
+    "mongoose": "*",
+    "jsonwebtoken": "*",
+    "passport": "*",
+    "passport-jwt": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbielec/Goldfish.git"
+  },
+  "author": "Maya Bielecki, Christine Richards, Vivian Yu Wu, Casey Graham, William Jackson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mbielec/Goldfish/issues"
+  },
+  "homepage": "https://github.com/mbielec/Goldfish#readme"
+}
