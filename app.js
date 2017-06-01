@@ -25,9 +25,6 @@ const mongoose = require('mongoose');
 
 //---------------------------------------------------------------
 
-
-//Setting up Express app, MongoDB database
-
 //Creating the express app
 const app = express();
 
@@ -39,7 +36,8 @@ app.listen(port, function() {
     console.log('Server started on port ' + port);
 });
 
-//Set static folder
+//Set static folder: now the browser will automatically search here for static files such as html pages, image files and
+// css scripts.
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Import other folders into the app so they can be used
