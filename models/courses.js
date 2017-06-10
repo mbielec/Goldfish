@@ -1,28 +1,26 @@
 //the schema, model and methods for a user document (object) will be created here
 //requires mongoose, bcrypt, and a link to ../config/database
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
 const config = require('../config/database')
 
-//User Schea
-const UserSchema = mongoose.Schema({
-	username:{
+//Course Schema
+const CourseSchema = mongoose.Schema({
+	courseComponentId:{
 		type:String
 	},
-	email:{
+	courseId:{
 		type:String
 	},
-	password:{
+	type:{
 		type:String
 	},
-	friends:[{
+	sectionCode:{
+		type:String
+	},
+	students:[{
 		type: Schema.ObjectId,
 		ref:'User'
 	}],
-	courses:[{
-		type: Schema.ObjectId,
-		ref:'Course'
-	}]
 });
 
-const User = module.exports = mongoose.model('User',UserSchema);
+const Course = module.exports = mongoose.model('Course',CourseSchema);
