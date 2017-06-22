@@ -1,0 +1,33 @@
+<% include partials/head %> 
+<body>
+
+
+<h1 class = "first">STUDY BUDDY</h1>
+<p class = "first">Made for students, by students. We want to make studying fun and give you the tools to succeed.  <br/>Track your class schedule, attended classes, weekly statistics, friends, and friends classes.</p>
+
+<div id="signup_frame">
+
+    <div id="signup">
+        <% if (message) { %>
+            <div class="alert-danger"><%= message %></div>
+        <% } %>
+        <form action="/signup" method="post">
+            <p class = "form-group">
+                <label>Email</label><input type="text" class="form-control" name="email" />@uwo.ca</p>
+            <p class = "form-group"><label>Password<input type="password" class="form-control" name="password" />(5-20 characters)<br/>
+            </div>
+
+            <div id="signup_control">
+                <input type="submit" class="form-control" value="Sign up" style="margin-left: 135px; margin-right: 250px; margin-top: 15px;"/>
+            </div>
+            </form>
+    </div>
+
+<span> Already have an account? <a href="/login"> Login </a></span>
+
+<div id="pic">
+    <asset:image src="studybuddylight.png" width="10%" height="auto" margin="auto"/>
+</div>
+
+</body>
+</html>
