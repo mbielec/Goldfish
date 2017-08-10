@@ -22,15 +22,15 @@ const cors = require('cors');
 //Import other folders into the app so they can be used
 const config = require("./config/database");
 const paths = require('./routes/paths');
-
+const userRoutes=require('./routes/user');
 //An object-document mapper to interact with MongoDB. Allows us to build schemas (the structure of a document, expected
 // fields), //models(objects based on the schemas, instances of these are "documents" in the database),and methods to
 // interact with the models.
 const mongoose = require('mongoose');
 
-const flash = require('connect-flash');
-
-const session = require('express-session');
+// const flash = require('connect-flash');
+//
+// const session = require('express-session');
 //---------------------------------------------------------------
 
 
@@ -65,19 +65,27 @@ app.use(cookieParser());
 //Set static folder: now the browser will automatically search here for static files such as html pages, image files and
 // css scripts.
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(session({secret:'keyboard cat'}));
+//
+// app.use(session({secret:'keyboard cat'}));
 
 //Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(flash());
+// app.use(flash());
 
 //Import the passport strategies
 require('./config/passport')(passport);
 
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
+    next();
+});
+
 //Connects to the routes which gives us different pages and their behaviour.
+app.use('/user',userRoutes);
 app.use('/', paths);
 
 //Cors middleware

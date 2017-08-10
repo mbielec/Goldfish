@@ -1,0 +1,93 @@
+
+body {
+  background-color: #BEE5FB;
+}
+h1{
+  color: #0F385C;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 400%;
+  font-weight: normal;
+  margin-bottom: 10px;
+  padding-bottom: 0;
+}
+h2{
+}
+h3{
+}
+p{
+  color: #0F385C;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 150%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0;
+}
+.lightbutton {
+  background-color: #BEE5FB;
+  border: none;
+  color: #0F385C;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.lightbutton:hover {
+  background-color: #0F385C;
+  color: #BEE5FB;
+}
+.lightbutton:active{
+  border: none;
+}
+.darkbutton {
+  background-color: #0F385C;
+  border: none;
+  color: #BEE5FB;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  float: right;
+}
+.darkbutton:hover {
+  background-color: #BEE5FB;
+  color: #0F385C;
+}
+.lightbutton:active{
+  border: none;
+}
+body {
+  margin: 0;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  background-color: #0F385C;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+li a {
+  display: block;
+  color: #BEE5FB;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-family: "Calibri", sans-serif;
+  text-align: left;
+}
+li a.active {
+  background-color: #BEE5FB;
+  color: #0F385C;
+}
+li a:hover:not(.active) {
+  background-color: #BEE5FB;
+  color: #0F385C;
+}
+
