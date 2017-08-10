@@ -10,30 +10,30 @@ router.get('/',function(req,res,next){
 	res.render('index.ejs',{title:'Welcome to Goldfish'});
 });
 
-router.get('/login', function(req, res, next){
-     res.render('login.ejs',{ message: req.flash('loginMessage')});
-});
+// router.get('/login', function(req, res, next){
+//      res.render('login.ejs',{ message: req.flash('loginMessage')});
+// });
+//
+// router.post('/login',passport.authenticate('local-login',{
+// 	successRedirect:'/home',
+// 	failureRedirect:'/login',
+// 	failureFlash:true,
+// }));
 
-router.post('/login',passport.authenticate('local-login',{
-	successRedirect:'/home',
-	failureRedirect:'/login',
-	failureFlash:true,
-}));
 
+// router.get('/signup', function(req,res,next){
+// 	res.render('signup.ejs',{message:req.flash('signupMessage')});
+// });
+//
+// router.post('/signup',passport.authenticate('local-signup',{
+// 	successRedirect:'/login',
+// 	failureRedirect:'/signup',
+// 	failureFlash:true,
+// }));
 
-router.get('/signup', function(req,res,next){
-	res.render('signup.ejs',{message:req.flash('signupMessage')});
-});
-
-router.post('/signup',passport.authenticate('local-signup',{
-	successRedirect:'/login',
-	failureRedirect:'/signup',
-	failureFlash:true,
-}));
-
-router.get('/home', isLoggedIn,function(req, res, next){
-    res.send("Your Homepage");
-});
+// router.get('/home', isLoggedIn,function(req, res, next){
+//     res.send("Your Homepage");
+// });
 
 router.get('/block', function(req, res, next){
     res.send("Set your website blocking options");

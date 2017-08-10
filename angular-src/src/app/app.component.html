@@ -1,3 +1,28 @@
-<h1>
-  {{title}}
-</h1>
+<!--The content below is only a placeholder and can be replaced.-->
+<!--<a [routerLink]="['logout']">Log out</a>-->
+<ul>
+
+  <li><a [routerLink]="['/authentication']" routerLinkActive="active">Welcome</a></li>
+  <li><a>Study Buddies</a></li>
+  <li><a [routerLink]="['/course']" routerLinkActive="active">Calendar</a></li>
+</ul>
+
+<div style="margin-left:20%;padding:10px 16px;height:1000px;">
+
+
+  <h1>STUDY BUDDY</h1>
+  <!--<p>Welcome to StudyBuddy! Your developing app, specific to your courses at Western, your friends, and your success.</p><br/>-->
+
+  <!--<p>Have you ever experienced not knowing anyone in your classes? Losing track of your schedule? Missing the notes from a-->
+    <!--certain lecture with no one to ask?</p><br/>-->
+
+  <!--<p>StudyBuddy is here to help.  Our application, named “StudyBuddy” features real data from from Western’s timetable data,-->
+    <!--adding people to friends lists, seeing friend's schedules, confirming attendance, and more.  In the future, we hope to-->
+    <!--update features, add chat with friends options, record time studying, reward study time and attendance streaks with badges,-->
+    <!--compete against friends, and more.</p><br/>-->
+
+  <!--<p>Stay tuned Western, we'll be your StudyBuddy.</p><br/><br/>-->
+
+ <router-outlet></router-outlet>
+</div>
+
