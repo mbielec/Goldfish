@@ -3,15 +3,15 @@
  */
 var express=require('express');
 var router=express.Router();
-var User = require('../models/users');
+var User = require('../models/user');
 var bcrypt=require('bcryptjs');
 var jwt=require('jsonwebtoken');
 
 router.post('/signup',function(req,res,next) {
 
     var user = new User({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
+        firstname: req.body.firstName,
+        lastname: req.body.lastName,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10)
 });
@@ -48,7 +48,7 @@ router.post('/login',function(req,res,next){
         if(!bcrypt.compareSync(req.body.password,user.password)) {
             return res.status(401).json({
                 title: 'Login failed',
-                error: {meesage: "Invalid login credentials."}
+                error: {message: "Invalid login credentials."}
             });
         }
         var token=jwt.sign({user: user},'secret',{expiresIn: 7200});
@@ -57,6 +57,29 @@ router.post('/login',function(req,res,next){
             userId:user._id
         });
     });
-})
+});
 
-module.exports = router;
+router.get('/',function(req,res,next) {
+
+    User.findOne({email: req.query.email}, function (err, user) {
+        console.log(req.query.email);
+        if (err) {
+            console.log("erre");
+            return res.status(500).json({
+                title: 'An error occured',
+                err: err
+            });
+        }
+        if (user) {
+            console.log("dups");
+            return res.status(200).json({
+                unique:false
+            });
+        }
+        console.log("success");
+        res.status(200).json({
+            unique:true
+        });
+    });
+});
+    module.exports = router;
