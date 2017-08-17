@@ -2,7 +2,7 @@
  * Created by vw on 2017-08-09.
  */
  import { User } from './user.model';
- import {Http, Headers,Response} from '@angular/http';
+ import {Http, Headers,Response,URLSearchParams} from '@angular/http';
  import {Injectable} from '@angular/core';
  import 'rxjs/RX';
 import {Observable} from "rxjs";
@@ -27,5 +27,13 @@ export class AuthenticationService{
 
      logout(){
          localStorage.clear();
+     }
+
+     checkUnique(email: string){
+         console.log("calling...");
+         let params: URLSearchParams = new URLSearchParams();
+         params.set('email',email);
+        return (this.http.get('http://localhost:3000/user',{search:params}).map((response:Response)=>response.json()));
+
      }
 }

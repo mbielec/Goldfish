@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {AuthenticationComponent} from "./authentication/authentication.component";
 import {SignupComponent} from "./authentication/signup.component";
 import {LoginComponent} from "./authentication/login.component";

@@ -2,7 +2,8 @@
 <form [formGroup]="signupForm" (ngSubmit)="onSubmit()"><div class="form-group">
     <div class="form-group">
     <label for="email">Email</label>
-    <input type="text" id="email" class="form-control" formControlName="email"> uwo.ca
+    <input type="text" id="email" class="form-control" formControlName="email" [(ngModel)]="email" (ngModelChange)="unique($event)"> @uwo.ca
+        <p class="error" [hidden]="uniqueEmail" class="error">This email has already been registered.</p>
     </div>
     <div class="form-group">
     <label for="password">Password</label>
@@ -16,6 +17,6 @@
     <label for="lastName">Last name</label>
     <input type="text" id="lastName" class="form-control" formControlName="lastName">
     </div>
-    <button type="submit" [disabled]="!signupForm.valid">Sign me up</button>
+    <button type="submit" [disabled]="!uniqueEmail||!signupForm.valid">Sign me up</button>
     </div></form>
 </div>
